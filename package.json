@@ -13,7 +13,10 @@
     "types:clear": "rimraf ./packages/types/index.ts && rimraf --glob ./packages/types/bindings"
   },
   "dependencies": {
-    "next": "15.3.4"
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.539.0",
+    "next": "15.3.4",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "rimraf": "^6.0.1",

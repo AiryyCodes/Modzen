@@ -8,6 +8,7 @@ import { useUser } from "@/context/UserContext";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 import { redirect } from "next/navigation";
+import Card from "@/components/Card";
 
 const schema = z.object({
     email: z
@@ -29,6 +30,7 @@ const LoginPage = () => {
     const { user, setUser } = useUser();
 
     if (user) {
+        console.log("User exists.");
         redirect("/");
     }
 
@@ -60,18 +62,22 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="bg-gray-100 flex flex-col items-center gap-6 p-6 rounded-xl">
+        <Card>
             <h1 className="text-xl font-medium">Sign in</h1>
-            <Form schema={schema} onSubmit={onSubmit} className="">
+            <Form
+                schema={schema}
+                onSubmit={onSubmit}
+                className="w-full sm:w-72 max-w-full mx-auto gap-4"
+            >
                 <FormValidation for="all" />
                 <FormInput name="email" label="Email or username" />
                 <FormInput name="password" label="Password" type="password" />
                 <FormButton>Sign in</FormButton>
-                <a href="/auth/register" className="text-gray-400">
+                <a href="/auth/register" className="text-white/59 w-fit">
                     Create an account
                 </a>
             </Form>
-        </div>
+        </Card>
     );
 };
 

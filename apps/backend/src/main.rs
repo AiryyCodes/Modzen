@@ -37,7 +37,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(Data::new(AppState { db: pool.clone() }))
             .configure(routes::configure)
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("127.0.0.1", 8088))?
     .run()
     .await
 }

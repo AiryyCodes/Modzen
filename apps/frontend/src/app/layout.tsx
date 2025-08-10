@@ -36,7 +36,7 @@ export default async function RootLayout({
         },
         credentials: "include",
         cache: "no-store",
-    }).then((res) => (res.ok ? res.json() : null));
+    }).then((res) => (res.ok || token ? res.json() : null));
 
     return (
         <UserProvider initialUser={user}>

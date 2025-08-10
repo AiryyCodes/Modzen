@@ -16,8 +16,8 @@ const Navbar = () => {
                 <div className="flex justify-between items-center w-full">
                     {/* Left*/}
                     <div className="flex items-center gap-4">
-                        <h1 className="text-xl font-medium">
-                            React and Actix Template
+                        <h1 className="text-white text-xl font-medium">
+                            Modzen
                         </h1>
                     </div>
 

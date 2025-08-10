@@ -1,5 +1,6 @@
 "use client";
 
+import Card from "@/components/Card";
 import { Form } from "@/components/Form/Form";
 import { FormButton } from "@/components/Form/FormButton";
 import { FormInput } from "@/components/Form/FormInput";
@@ -82,9 +83,13 @@ const RegisterPage = () => {
     };
 
     return (
-        <div className="bg-gray-100 flex flex-col items-center gap-6 p-6 rounded-xl">
+        <Card>
             <h1 className="text-xl font-medium">Sign up</h1>
-            <Form schema={schema} onSubmit={onSubmit} className="">
+            <Form
+                schema={schema}
+                onSubmit={onSubmit}
+                className="w-full sm:w-72 max-w-full mx-auto gap-4"
+            >
                 <FormValidation for="all" />
                 <FormInput name="username" label="Username" />
                 <FormInput name="email" label="Email" />
@@ -95,14 +100,14 @@ const RegisterPage = () => {
                     type="password"
                 />
                 <FormButton>Sign up</FormButton>
-                <p className="flex gap-2 text-gray-600">
+                <p className="flex gap-2 text-white/50">
                     Already have an account?{" "}
-                    <a href="/auth/login" className="text-blue-600">
+                    <a href="/auth/login" className="text-white">
                         Sign in
                     </a>
                 </p>
             </Form>
-        </div>
+        </Card>
     );
 };
 

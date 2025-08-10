@@ -10,6 +10,7 @@ import {
 } from "react-hook-form";
 import { ZodType, z } from "zod";
 import { FormDataProvider } from "./FormContext";
+import { twMerge } from "tailwind-merge";
 
 type FormProps<T extends ZodType<any, any>> = {
     schema: T;
@@ -39,7 +40,7 @@ export function Form<T extends ZodType<any, any>>({
                         onSubmit(data, methods)
                     )}
                     suppressHydrationWarning
-                    className={`flex flex-col gap-2 ${className}`}
+                    className={twMerge("flex flex-col gap-2", className)}
                 >
                     {children}
                 </form>
